@@ -42,4 +42,19 @@ public class PLatinImplTest {
   public void testProcessHandlesMultipleWordsWithVowels() {
     assertEquals("ello hay each way erson pay", sut.process("hello each person"));
   }
+
+  @Test
+  public void testRevert() {
+    assertEquals("hello", sut.revert("ello hay"));
+  }
+
+  @Test public void testMultipleConsonatRevert() {
+    assertEquals("school", sut.revert("ool schay"));
+  }
+
+  @Test
+  public void testVowelWord() {
+    assertEquals("each", sut.revert("each way"));
+  }
 }
+
